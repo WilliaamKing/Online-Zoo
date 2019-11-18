@@ -10,6 +10,7 @@ header{
 
 header figure{
     grid-column-start: 2;
+    cursor: pointer;
 }
 
 header h1{
@@ -20,6 +21,7 @@ header h1{
     grid-column-end: 9;
     text-transform: uppercase;
     font-size:  36px;
+    cursor: default;
 }
 
 header nav{
