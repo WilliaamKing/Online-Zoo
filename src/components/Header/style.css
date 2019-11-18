@@ -1,0 +1,19 @@
+header{
+    height: 75px;
+    display: grid;
+    grid-template-columns: repeat(12, 150px);
+    grid-gap: 11px;
+    background-color: #08A54C;
+}
+
+header h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column-start: 5;
+    grid-column-end: 9;
+    text-transform: uppercase;
+    font-family: 'Fjalla One', sans-serif;
+    font-size:  36px;
+    color: #fff;
+}
