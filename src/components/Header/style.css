@@ -1,7 +1,7 @@
 header{
-    height: 75px;
     display: grid;
     grid-template-columns: repeat(12, 150px);
+    grid-template-rows: 75px;
     grid-gap: 11px;
     font-family: 'Fjalla One', sans-serif;
     color: #fff;
@@ -11,8 +11,6 @@ header{
 header figure{
     grid-column-start: 2;
 }
-
-
 
 header h1{
     display: flex;
