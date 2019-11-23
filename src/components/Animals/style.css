@@ -1,0 +1,9 @@
+.tool-bar{
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.tool-bar > *{
+    margin: 10px;
+}
