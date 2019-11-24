@@ -6,6 +6,8 @@ import Animal from '../Animal/index';
 import 'antd/dist/antd.css';
 import './style.css';
 
+const { Search } = Input;
+
 function Animals(props){
     const openAddSection = function (){
         closeDeleteSection();
@@ -50,6 +52,15 @@ function Animals(props){
 
     return (
         <Fragment>
+             <div id = "search">
+                <Search
+                    placeholder="Пошук"
+                    enterButton
+                    size="large"
+                    onSearch={value => console.log(value)}
+                />
+             </div>
+
             {props.animals.map((el,index) => <Animal info = {el} key = {`animal-${index}`}/>)}
 
             <article id = "toolBar">

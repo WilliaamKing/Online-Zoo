@@ -61,3 +61,8 @@ article #btnSection{
     display: flex;
     justify-content: space-between;
 }
+
+#search{
+    padding: 30px 40px 0 40px;
+    flex-basis: 100%;
+}
