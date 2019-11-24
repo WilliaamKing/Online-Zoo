@@ -74,13 +74,13 @@ function Animals(props){
                 <h2>Додати нову тварину</h2>
 
                 <form>
-                    <Input placeholder="Тип" size = "large" id = "type" allowClear = "true"/>
-                    <Input placeholder="Клас" size = "large" id = "class" allowClear = "true"/>
-                    <Input placeholder="Ряд" size = "large" id = "series" allowClear = "true"/>
-                    <Input placeholder="Родина" size = "large" id = "family" allowClear = "true"/>
-                    <Input placeholder="Рід" size = "large" id = "genus" allowClear = "true"/>
-                    <Input placeholder="Вид" size = "large" id = "species" allowClear = "true"/>
-                    <Input placeholder="Фото" size = "large" id = "photo" allowClear = "true"/>
+                    <Input placeholder="Тип" size = "large" id = "type" allowClear = {true}/>
+                    <Input placeholder="Клас" size = "large" id = "class" allowClear = {true}/>
+                    <Input placeholder="Ряд" size = "large" id = "series" allowClear = {true}/>
+                    <Input placeholder="Родина" size = "large" id = "family" allowClear = {true}/>
+                    <Input placeholder="Рід" size = "large" id = "genus" allowClear = {true}/>
+                    <Input placeholder="Вид" size = "large" id = "species" allowClear = {true}/>
+                    <Input placeholder="Фото" size = "large" id = "photo" allowClear = {true}/>
 
                     <section id = "btnSection">
                         <Button type="primary" size = "large" id = "addBtn" onClick = {addAnimal}>Додати</Button>
