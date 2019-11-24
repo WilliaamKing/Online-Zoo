@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useState} from 'react';
 import {connect} from 'react-redux';
 import {addAnimal, removeAnimal} from '../../actions/actionCreator';
 import { Button, Input} from 'antd';
@@ -9,6 +9,8 @@ import './style.css';
 const { Search } = Input;
 
 function Animals(props){
+    const [searchElement, setSearchElement] = useState("");
+
     const openAddSection = function (){
         closeDeleteSection();
         document.getElementById("addForm").style.display = "block";
@@ -57,11 +59,11 @@ function Animals(props){
                     placeholder="Пошук"
                     enterButton
                     size="large"
-                    onSearch={value => console.log(value)}
+                    onSearch={value => setSearchElement(value)}
                 />
              </div>
 
-            {props.animals.map((el,index) => <Animal info = {el} key = {`animal-${index}`}/>)}
+            {props.animals.filter(el => el.species.indexOf(searchElement)>=0).map((el,index) => <Animal info = {el} key = {`animal-${index}`}/>)}
 
             <article id = "toolBar">
                 <Button type="primary" size = "large" onClick = {openAddSection}>Додати</Button>
