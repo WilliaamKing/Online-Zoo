@@ -15,7 +15,6 @@ export default function Header(){
             <nav>
                 <div><Link to = "/"><span>Тварини</span></Link></div>
                 <div><Link to = "/places"><span>Локації</span></Link></div>
-                <div><Link to = "/contact"><span>Розробнику</span></Link></div>
             </nav>
         </header>
     )
