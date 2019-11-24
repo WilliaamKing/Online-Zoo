@@ -1,4 +1,4 @@
-import {ADD_ANIMAL} from '../contstants';
+import {ADD_ANIMAL, REMOVE_ANIMAL} from '../contstants';
 import {load} from 'redux-localstorage-simple';
 
 let ANIMALS = load({namespace: 'zoo'});
@@ -23,6 +23,8 @@ const animals = (state = ANIMALS.animals, {type, className, series, family,
                     photo,
                 }
             ];
+        case REMOVE_ANIMAL:
+            return [...state].filter(el => el.species !== species);
         default:
                 return state;
     }
