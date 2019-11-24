@@ -68,6 +68,8 @@ function Animals(props){
             <article id = "toolBar">
                 <Button type="primary" size = "large" onClick = {openAddSection}>Додати</Button>
                 <Button type="danger" size = "large" onClick = {openDeleteSection}>Видалити</Button>
+                <Button size="large">Видалити все</Button>
+                <Button type="primary" size="large">Сортувати</Button>
             </article>
 
             <article id = "addForm">
