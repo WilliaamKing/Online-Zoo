@@ -1,9 +1,51 @@
-.tool-bar{
+#toolBar{
     flex-basis: 100%;
     display: flex;
     justify-content: center;
 }
 
-.tool-bar > *{
+#toolBar > *{
     margin: 10px;
+}
+
+#addForm{
+    margin-top: -300px;
+    margin-left: -238px;
+    padding: 10px;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 476px;
+    background: #fff; 
+    border-radius: 5px;  
+}
+
+#addForm h2{
+    font-size: 24px;
+    text-align: center;
+}
+
+#addForm form{
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#addForm form > *{
+    margin: 5px 0 5px;
+}
+
+#addForm form > *:not(#btnSection)
+{
+    flex-basis: 100%;
+}
+
+#addForm #btnSection{
+    width: 175px;
+    display: flex;
+    justify-content: space-between;
 }
