@@ -24,6 +24,7 @@
     background: #fff;
     border: 4px dashed #e0f70c; 
     border-radius: 5px;
+    z-index: 3;
 }
 
 #deleteForm{
