@@ -8,11 +8,21 @@ import './style.css';
 
 function Animals(props){
     const openAddSection = function (){
+        closeDleteSection();
         document.getElementById("addForm").style.display = "block";
+    }
+
+    const openDeleteSection = function (){
+        closeAddSection();
+        document.getElementById("deleteForm").style.display = "block";
     }
     
     const closeAddSection = function (){
         document.getElementById("addForm").style.display = "none";
+    }
+
+    const closeDleteSection = function (){
+        document.getElementById("deleteForm").style.display = "none";
     }
     
     const addAnimal = function (){
@@ -35,7 +45,7 @@ function Animals(props){
 
             <article id = "toolBar">
                 <Button type="primary" size = "large" onClick = {openAddSection}>Додати</Button>
-                <Button type="danger" size = "large">Видалити</Button>
+                <Button type="danger" size = "large" onClick = {openDeleteSection}>Видалити</Button>
                 <Button size = "large">Змінити</Button>
             </article>
 
@@ -54,6 +64,19 @@ function Animals(props){
                     <section id = "btnSection">
                         <Button type="primary" size = "large" id = "addBtn" onClick = {addAnimal}>Додати</Button>
                         <Button type="danger" size = "large" id = "closeBtn"onClick = {closeAddSection}>
+                            Відмінити</Button>
+                    </section>
+                </form>
+            </article>
+
+            <article id = "deleteForm">
+                <h2>Видалити тварину</h2>
+                <form>
+                    <Input placeholder="Вид" size = "large" id = "species"/>
+
+                    <section id = "btnSection">
+                        <Button type="primary" size = "large" id = "addBtn">Додати</Button>
+                        <Button type="danger" size = "large" id = "closeBtn"onClick = {closeDleteSection}>
                             Відмінити</Button>
                     </section>
                 </form>
