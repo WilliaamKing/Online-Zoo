@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import {connect} from 'react-redux';
-import {addAnimal} from '../../actions/actionCreator';
+import {addAnimal, removeAnimal} from '../../actions/actionCreator';
 import { Button, Input} from 'antd';
 import Animal from '../Animal/index';
 import 'antd/dist/antd.css';
@@ -8,7 +8,7 @@ import './style.css';
 
 function Animals(props){
     const openAddSection = function (){
-        closeDleteSection();
+        closeDeleteSection();
         document.getElementById("addForm").style.display = "block";
     }
 
@@ -21,7 +21,7 @@ function Animals(props){
         document.getElementById("addForm").style.display = "none";
     }
 
-    const closeDleteSection = function (){
+    const closeDeleteSection = function (){
         document.getElementById("deleteForm").style.display = "none";
     }
     
@@ -37,11 +37,20 @@ function Animals(props){
         
         addAnimal(type.value, className.value, series.value, family.value, genus.value, species.value,
             photo.value);
+        closeAddSection();
+    }
+
+    const removeAnimal = function (){
+        const species = document.getElementById("animalName");
+        const {removeAnimal} = props;
+
+        removeAnimal(species.value);
+        closeDeleteSection()
     }
 
     return (
         <Fragment>
-            {props.animals.map((el,index) => <Animal name = {el.species} key = {`animal-${index}`} image = {el.photo}/>)}
+            {props.animals.map((el,index) => <Animal info = {el} key = {`animal-${index}`}/>)}
 
             <article id = "toolBar">
                 <Button type="primary" size = "large" onClick = {openAddSection}>Додати</Button>
@@ -53,13 +62,13 @@ function Animals(props){
                 <h2>Додати нову тварину</h2>
 
                 <form>
-                    <Input placeholder="Тип" size = "large" id = "type"/>
-                    <Input placeholder="Клас" size = "large" id = "class"/>
-                    <Input placeholder="Ряд" size = "large" id = "series"/>
-                    <Input placeholder="Родина" size = "large" id = "family"/>
-                    <Input placeholder="Рід" size = "large" id = "genus"/>
-                    <Input placeholder="Вид" size = "large" id = "species"/>
-                    <Input placeholder="Фото" size = "large" id = "photo"/>
+                    <Input placeholder="Тип" size = "large" id = "type" allowClear = "true"/>
+                    <Input placeholder="Клас" size = "large" id = "class" allowClear = "true"/>
+                    <Input placeholder="Ряд" size = "large" id = "series" allowClear = "true"/>
+                    <Input placeholder="Родина" size = "large" id = "family" allowClear = "true"/>
+                    <Input placeholder="Рід" size = "large" id = "genus" allowClear = "true"/>
+                    <Input placeholder="Вид" size = "large" id = "species" allowClear = "true"/>
+                    <Input placeholder="Фото" size = "large" id = "photo" allowClear = "true"/>
 
                     <section id = "btnSection">
                         <Button type="primary" size = "large" id = "addBtn" onClick = {addAnimal}>Додати</Button>
@@ -72,11 +81,11 @@ function Animals(props){
             <article id = "deleteForm">
                 <h2>Видалити тварину</h2>
                 <form>
-                    <Input placeholder="Вид" size = "large" id = "species"/>
+                    <Input placeholder="Вид" size = "large" id = "animalName"/>
 
                     <section id = "btnSection">
-                        <Button type="primary" size = "large" id = "addBtn">Додати</Button>
-                        <Button type="danger" size = "large" id = "closeBtn"onClick = {closeDleteSection}>
+                        <Button type="primary" size = "large" id = "addBtn" onClick = {removeAnimal}>Видалити</Button>
+                        <Button type="danger" size = "large" id = "closeBtn"onClick = {closeDeleteSection}>
                             Відмінити</Button>
                     </section>
                 </form>
@@ -87,4 +96,4 @@ function Animals(props){
 
 export default connect (state =>({
     animals: state.animals
-}),{addAnimal})(Animals);
+}),{addAnimal, removeAnimal})(Animals);
