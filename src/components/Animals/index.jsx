@@ -1,6 +1,6 @@
 import React, {Fragment, useState} from 'react';
 import {connect} from 'react-redux';
-import {addAnimal, removeAnimal, removeAllAnimals} from '../../actions/actionCreator';
+import {addAnimal, removeAnimal, removeAllAnimals, sortAnimals} from '../../actions/actionCreator';
 import { Button, Input} from 'antd';
 import Animal from '../Animal/index';
 import 'antd/dist/antd.css';
@@ -27,6 +27,11 @@ function Animals(props){
 
     const closeDeleteSection = function (){
         document.getElementById("deleteForm").style.display = "none";
+    }
+
+    const sortAnimals = function(){
+        const {sortAnimals} = props;
+        sortAnimals();
     }
     
     const addAnimal = function (){
@@ -74,7 +79,7 @@ function Animals(props){
                 <Button type="primary" size = "large" onClick = {openAddSection}>Додати</Button>
                 <Button type="danger" size = "large" onClick = {openDeleteSection}>Видалити</Button>
                 <Button size="large" onClick = {removeAll}>Видалити все</Button>
-                <Button type="primary" size="large">Сортувати</Button>
+                <Button type="primary" onClick = {sortAnimals} size="large">Сортувати</Button>
             </article>
 
             <article id = "addForm">
@@ -115,4 +120,4 @@ function Animals(props){
 
 export default connect (state =>({
     animals: state.animals
-}),{addAnimal, removeAnimal, removeAllAnimals})(Animals);
+}),{addAnimal, removeAnimal, removeAllAnimals, sortAnimals})(Animals);
