@@ -1,6 +1,6 @@
 import React, {Fragment, useState} from 'react';
 import {connect} from 'react-redux';
-import {addAnimal, removeAnimal} from '../../actions/actionCreator';
+import {addAnimal, removeAnimal, removeAllAnimals} from '../../actions/actionCreator';
 import { Button, Input} from 'antd';
 import Animal from '../Animal/index';
 import 'antd/dist/antd.css';
@@ -52,6 +52,11 @@ function Animals(props){
         closeDeleteSection()
     }
 
+    const removeAll = function (){
+        const {removeAllAnimals} = props;
+        removeAllAnimals(); 
+    }
+
     return (
         <Fragment>
              <div id = "search">
@@ -68,7 +73,7 @@ function Animals(props){
             <article id = "toolBar">
                 <Button type="primary" size = "large" onClick = {openAddSection}>Додати</Button>
                 <Button type="danger" size = "large" onClick = {openDeleteSection}>Видалити</Button>
-                <Button size="large">Видалити все</Button>
+                <Button size="large" onClick = {removeAll}>Видалити все</Button>
                 <Button type="primary" size="large">Сортувати</Button>
             </article>
 
@@ -110,4 +115,4 @@ function Animals(props){
 
 export default connect (state =>({
     animals: state.animals
-}),{addAnimal, removeAnimal})(Animals);
+}),{addAnimal, removeAnimal, removeAllAnimals})(Animals);
