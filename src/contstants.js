@@ -1,0 +1,4 @@
+export const ADD_ANIMAL = 'ADD_ANIMAL';
+export const REMOVE_ANIMAL = 'REMOVE_ANIMAL';
+export const ADD_LOCATION = 'ADD_LOCATION';
+export const REMOVE_LOCATION = 'REMOVE_LOCATION';

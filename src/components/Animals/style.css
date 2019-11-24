@@ -1,0 +1,68 @@
+#toolBar{
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#toolBar > *{
+    margin: 10px;
+}
+
+#addForm{
+    margin-top: -300px;
+    margin-left: -239px;
+    width: 600px;
+    height: 478px;
+}
+
+#addForm, #deleteForm{
+    padding: 10px;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    border: 4px dashed #e0f70c; 
+    border-radius: 5px;
+    z-index: 3;
+}
+
+#deleteForm{
+    margin-top: -150px;
+    margin-left: -90px;
+    width: 300px;
+    height: 180px;
+}
+
+article h2{
+    font-size: 24px;
+    text-align: center;
+}
+
+#addForm form > *, #deleteForm form > *{
+    margin: 5px 0 5px;
+}
+
+article form{
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+article form > *:not(#btnSection)
+{
+    flex-basis: 100%;
+}
+
+article #btnSection{
+    width: 175px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#search{
+    padding: 30px 40px 0 40px;
+    flex-basis: 100%;
+}

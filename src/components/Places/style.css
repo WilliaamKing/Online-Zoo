@@ -1,0 +1,14 @@
+#toolBar{
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#toolBar > *{
+    margin: 10px;
+}
+
+.addForm#addForm{
+    margin-top: -125px;
+    height: 250px;
+}
