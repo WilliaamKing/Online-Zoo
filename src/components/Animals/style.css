@@ -51,8 +51,7 @@ article form{
     flex-wrap: wrap;
 }
 
-article form > *:not(#btnSection)
-{
+article form > *:not(#btnSection){
     flex-basis: 100%;
 }
 
