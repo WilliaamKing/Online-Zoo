@@ -2,3 +2,5 @@ export const ADD_ANIMAL = 'ADD_ANIMAL';
 export const REMOVE_ANIMAL = 'REMOVE_ANIMAL';
 export const ADD_LOCATION = 'ADD_LOCATION';
 export const REMOVE_LOCATION = 'REMOVE_LOCATION';
+export const REMOVE_ALL_ANIMALS  = "REMOVE_ALL_ANIMALS";
+export const SORT_ANIMALS = "SORT_ANIMALS";
