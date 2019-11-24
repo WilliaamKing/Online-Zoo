@@ -1,4 +1,4 @@
-import {ADD_ANIMAL, REMOVE_ANIMAL, ADD_LOCATION, REMOVE_LOCATION, REMOVE_ALL_ANIMALS} from "../contstants";
+import {ADD_ANIMAL, REMOVE_ANIMAL, ADD_LOCATION, REMOVE_LOCATION, REMOVE_ALL_ANIMALS, SORT_ANIMALS} from "../contstants";
 
 export const addAnimal = (typeName, className, series, family, genus, species, photo) => ({
     type: ADD_ANIMAL,
@@ -29,4 +29,8 @@ export const removeLocation = name =>({
 
 export const removeAllAnimals = () => ({
     type: REMOVE_ALL_ANIMALS,
+});
+
+export const sortAnimals = () => ({
+    type: SORT_ANIMALS,
 });
